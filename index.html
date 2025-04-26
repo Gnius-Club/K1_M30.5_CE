@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 30.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+         .activity.active .banner {
+             background-color: #AED6F1; /* Slightly different color when active */
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 30.5: ¡Estaciones de Construcción para el Puente!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Set LEGO Coding Express (tren, vías rectas, vías curvas, ladrillos de acción azul y amarillo) y 10 iBricks por cada pareja. Área despejada para circuito simple.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡Manos a la Obra, Constructores! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Introducir el concepto de construcción y movimiento en estaciones, preparando para la actividad tipo circuito.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda al CODE SQUAD y habla sobre construir cosas grandes.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, súper constructores del CODE SQUAD! ¿Les gusta armar cosas? ¡Torres altas, casas, puentes! ¡Es genial! Hoy tenemos una misión muy importante: ¡vamos a ayudar a construir las piezas para un puente gigante sobre el Río Chispeante! ¡Necesitamos movernos y usar nuestras manos!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que se necesita energía y concentración para construir y seguir pasos.</td>
+                <td>
+                     <div class="dialogue">
+                        "Para ser buenos constructores, necesitamos ¡mucha energía y concentración! ¡Como los atletas! Vamos a nuestro Gimnasio Cerebral para prepararnos. Haremos ejercicios que nos ayudan a estar atentos y listos para seguir las instrucciones de construcción y de nuestro Coding Express. ¡A calentar motores!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Reforzar el seguimiento de secuencias y la coordinación motora.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, recordando que cada paso es importante para el resultado final.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Listos para el Baile de los Constructores! ¡Cada movimiento es un paso importante en nuestra construcción! ¡Arriba, abajo, a un lado! ¡Sigan el ritmo y la secuencia! ¡Así practicamos para construir nuestro puente paso a pasito! ¡Música, maestro!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - El Circuito del Puente -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🌉 Actividad 3: ¡Necesitamos Piezas para el Puente! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Presentar la historia/necesidad del puente, explicar el formato de circuito con 2 estaciones (construir y codificar) y el rol del Coding Express.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Narra la necesidad de construir un puente y la existencia de dos estaciones de trabajo.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡CODE SQUAD! ¡Hay un problema en Villa Veloz! Necesitan cruzar el Río Chispeante para llevar frutas deliciosas al otro lado, ¡pero no hay puente! ¡Nos han pedido ayuda para construir las piezas! Para hacerlo rápido, hemos organizado el trabajo en ¡dos estaciones especiales! ¡Un circuito de construcción!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica las dos estaciones: 1) Apilar bloques (simulando piezas del puente). 2) Preparar la vía y el ladrillo de acción para que el Coding Express pruebe una sección del puente (o haga una señal).</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Miren el plan! En la **Estación 1: Zona de Materiales**, ¡apilaremos nuestros bloques gigantes para formar las columnas del puente! ¡Fuerza, constructores! Luego, iremos rápido a la **Estación 2: Zona de Pruebas**. Allí, prepararemos una pequeña vía para que nuestro Coding Express haga una prueba especial. ¡Le pondremos un ladrillo mágico para que haga algo importante! ¿Listos para recorrer el circuito y construir?"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Equipos de Constructores! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para trabajar colaborativamente en las estaciones del circuito.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que construir un puente es un gran proyecto y se hace mejor en equipo. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Construir un puente es un trabajo enorme! ¡Necesitamos a los mejores Equipos de Constructores! ¡Cuando trabajan juntos, las ideas fluyen y la construcción avanza más rápido! ¡Es hora de encontrar a su compañero de equipo! ¡Busquen a su pareja de construcción!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja y explícales que se moverán juntos por las estaciones. Prepara el espacio con las dos estaciones marcadas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Todos tienen a su compañero? ¡Excelente! Recuerden, se moverán JUNTOS por el circuito. Primero a la Estación 1, luego a la Estación 2. ¡Ayúdense y trabajen como un verdadero equipo de constructores! ¡Preparen sus cascos imaginarios!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 y 6 combinadas en el circuito -->
+<div id="activity-5-6" class="activity">
+    <div class="banner" onclick="toggleContent('circuito-construccion-codificacion')">
+        <div class="title">🏗️ Actividad 5 & 6: ¡El Circuito en Acción! ⏰ Tiempo: 11 minutos</div>
+        <div class="subtitle">Objetivo: Realizar las tareas de construcción (Act 5) y codificación simple (Act 6) en las estaciones del circuito, culminando con la prueba del tren.</div>
+    </div>
+    <div id="circuito-construccion-codificacion" class="content">
+        <table>
+             <!-- Estación 1: Construcción (Actividad 5 implícita) -->
+             <tr>
+                <td colspan="2"><strong>ESTACIÓN 1: Zona de Materiales (Apilar Bloques)</strong></td>
+            </tr>
+             <tr>
+                <td><strong>PASO 1 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "Estación 1: ¡A Apilar!". Las parejas van a la Estación 1 y apilan iBricks según su nivel.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Primera parada: Zona de Materiales! ¡Aquí construiremos las columnas del puente! ¡Tomen sus bloques gigantes y apílenlos con cuidado! (Indica la altura según el nivel). ¡Necesitamos que sean fuertes y estables! ¡Vamos, equipos!"
+                    </div>
+                </td>
+            </tr>
+             <!-- Diferenciación para Estación 1 -->
+            <tr class="k1-content"><td><strong>Tarea K1:</strong> Apilar 2 bloques gigantes uno sobre otro.</td><td></td></tr>
+            <tr class="k2-content"><td><strong>Tarea K2:</strong> Apilar 3 bloques gigantes uno sobre otro.</td><td></td></tr>
+            <tr class="k3-content"><td><strong>Tarea K3:</strong> Apilar 4 bloques gigantes uno sobre otro.</td><td></td></tr>
+
+            <tr><td colspan="2"><hr></td></tr>
+
+             <!-- Estación 2: Codificación (Actividad 6) -->
+             <tr>
+                <td colspan="2"><strong>ESTACIÓN 2: Zona de Pruebas (Preparar Vía y Probar Tren)</strong></td>
+            </tr>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Estación 2 K1: Vía Recta y ¡Reversa!". Las parejas van a la Estación 2. Colocan 1 vía recta y el ladrillo AZUL (reversa). Prueban empujando el tren.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Bien hecho en la Estación 1, equipo K1! Ahora, ¡rápido a la Zona de Pruebas! Tomen UNA vía recta y el ladrillo mágico AZUL. ¿Qué creen que hace el azul? ¡Hace que el tren vaya hacia ATRÁS! ¡Pongan la vía y coloquen el ladrillo azul al final! Ahora, pongan el tren al inicio y ¡empujón! ¿Fue en reversa? ¡Genial! ¡Prueba superada!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 2 - K2 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Estación 2 K2: ¡Conecta y Reversa!". Las parejas van a la Estación 2. Conectan 2 vías rectas y colocan el ladrillo AZUL al final. Prueban el tren.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Excelente trabajo apilando, K2! ¡Ahora a la Zona de Pruebas! Tomen DOS vías rectas y ¡conéctenlas para hacer un camino más largo! Ahora, tomen el ladrillo AZUL (¡el de reversa!) y pónganlo al final del camino. ¡Listos para la prueba! Pongan el tren al inicio y ¡suave empujón! ¿Recorrió el camino y fue en reversa al final? ¡Perfecto! ¡Son grandes ingenieros!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Estación 2 K3: ¡Curva, Sonido y Reversa!". Van a Estación 2. Conectan recta-curva-recta. Colocan ladrillo AMARILLO (sonido) después de la curva y AZUL (reversa) al final. Prueban.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Impresionante torre, K3! ¡A la Zona de Pruebas, expertos! Su reto: conecten una vía recta, luego una CURVA, y otra recta. ¡Ahora, la codificación! Después de la curva, pongan el ladrillo AMARILLO (¡pip-pip!). Y al final del todo, el ladrillo AZUL (¡reversa!). ¡Listos para la prueba completa! Tren al inicio... ¡empujón! ¿Tomó la curva? ¿Sonó? ¿Y fue en reversa? ¡BRILLANTE! ¡Circuito completado con éxito!"
+                    </div>
+                </td>
+            </tr>
+             <!-- Diapositivas de Éxito (se muestran mientras prueban) -->
+             <tr class="k1-content"><td><em>(Mientras prueban K1)</em> Reproduce la **DIAPOSITIVA 12** "¡Éxito K1!" (Tren yendo en reversa).</td><td></td></tr>
+             <tr class="k2-content"><td><em>(Mientras prueban K2)</em> Reproduce la **DIAPOSITIVA 13** "¡Éxito K2!" (Tren yendo en reversa en vía más larga).</td><td></td></tr>
+             <tr class="k3-content"><td><em>(Mientras prueban K3)</em> Reproduce la **DIAPOSITIVA 14** "¡Éxito K3!" (Tren sonando y luego yendo en reversa tras curva).</td><td></td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 OMITIDA -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Piezas Listas, Puente en Camino! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar la finalización del circuito, reforzar la conexión entre acciones físicas y de codificación, y reflexionar sobre el trabajo en equipo.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Reúne al grupo, felicita por completar el circuito y las tareas. Realiza preguntas de reflexión.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡BRAVO, equipos de constructores del CODE SQUAD! ¡Han completado el circuito y han preparado las piezas y las pruebas para nuestro puente sobre el Río Chispeante! ¡Gracias a su trabajo, Villa Veloz pronto tendrá su puente! ¡Misión cumplida! Pensemos juntos en lo que hicimos:
+1. ¿Qué hicimos en la primera estación? (¡Apilar bloques!) ¿Fue fácil o difícil?
+2. ¿Qué hicimos en la segunda estación? (¡Poner vías y ladrillos mágicos!) ¿Qué hacía el ladrillo azul? (¡Reversa!) (Para K3: ¿Y el amarillo?)
+3. ¿Cómo les ayudó trabajar con un compañero para completar las dos estaciones?
+¡Hoy combinamos construcción física con codificación para nuestro tren! ¡Son increíbles resolviendo problemas! ¡Nos vemos en la próxima misión!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity'); // Encuentra el contenedor de la actividad
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active'); // Remueve clase activa si se cierra
+        } else {
+             // Opcional: Cierra otros contenidos abiertos antes de abrir uno nuevo
+             // closeAllContents();
+            content.style.display = "block";
+            parentActivity.classList.add('active'); // Añade clase activa si se abre
+        }
+    }
+
+    // Función opcional para cerrar todos los demás contenidos al abrir uno
+    /*
+    function closeAllContents() {
+        var allContents = document.querySelectorAll('.content');
+        var allActivities = document.querySelectorAll('.activity');
+        allContents.forEach(function(content) {
+            content.style.display = 'none';
+        });
+         allActivities.forEach(function(activity) {
+             activity.classList.remove('active');
+         });
+    }
+    */
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        // Actualiza el texto del título H2
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        // Oculta todas las filas de contenido específico de nivel primero
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        // Muestra solo las filas del nivel seleccionado
+        // Usamos 'table-row' porque estamos mostrando/ocultando filas de tabla (<tr>)
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             // Importante: Necesitamos asegurarnos de que el display sea correcto para filas de tabla
+             if (el.tagName === 'TR') {
+                 el.style.display = 'table-row';
+             } else {
+                 // Si por alguna razón hay otros elementos, usar 'block' o ajustar según sea necesario
+                 el.style.display = 'block';
+             }
+        });
+    }
+
+    // Asegura que updateContent se ejecute cuando la página cargue
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
